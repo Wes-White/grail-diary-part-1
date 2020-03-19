@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AddPOIDelegate {
-    func poiWasAdded(_ poi: POI)
+    func poiWasAdded(poi: POI)
 }
 
 class AddPOIViewController: UIViewController {
@@ -58,10 +58,9 @@ class AddPOIViewController: UIViewController {
         //create new poi
         
         let newPoi = POI(location: newLocation, country: newCountry, clues: newClues)
-        delegate?.poiWasAdded(newPoi)
+        delegate?.poiWasAdded(poi: newPoi)
         dismiss(animated: true, completion: nil)
     }
-
     
     /*
     // MARK: - Navigation

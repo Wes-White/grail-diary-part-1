@@ -184,7 +184,7 @@
                     <navigationItem key="navigationItem" title="Grail Diary" id="zeW-3h-DS9">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6xK-cn-HZG">
                             <connections>
-                                <segue destination="BeU-dd-kiB" kind="presentation" id="Qcw-LD-Ioy"/>
+                                <segue destination="BeU-dd-kiB" kind="presentation" identifier="ModalNewPOI" id="Qcw-LD-Ioy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
