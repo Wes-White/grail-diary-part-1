@@ -11,12 +11,10 @@ import UIKit
 protocol AddPOIDelegate {
     func poiWasAdded(_ poi: POI)
 }
-
 class AddPOIViewController: UIViewController {
     
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var countryTextField: UITextField!
-    
     @IBOutlet weak var clue1TextField: UITextField!
     @IBOutlet weak var clue2TextField: UITextField!
     @IBOutlet weak var clue3TextField: UITextField!
@@ -37,7 +35,7 @@ class AddPOIViewController: UIViewController {
     @IBAction func save(_ sender: Any) {
         
         guard let newLocation = locationTextField.text,
-            let newCountry = countryTextField.text   else { return }
+            let newCountry = countryTextField.text   else {return}
         
         var newClues: [String] = []
         
@@ -45,7 +43,6 @@ class AddPOIViewController: UIViewController {
         !clue1.isEmpty {
             newClues.append(clue1)
         }
-        
         if let clue2 = clue2TextField.text,
         !clue2.isEmpty {
             newClues.append(clue2)
@@ -54,14 +51,15 @@ class AddPOIViewController: UIViewController {
         !clue3.isEmpty {
             newClues.append(clue3)
         }
-    
+        
         //create new poi
         
         let newPoi = POI(location: newLocation, country: newCountry, clues: newClues)
+        
         delegate?.poiWasAdded(newPoi)
         dismiss(animated: true, completion: nil)
+        
     }
-
     
     /*
     // MARK: - Navigation
@@ -73,7 +71,16 @@ class AddPOIViewController: UIViewController {
     }
     */
 
+  
 }
 
 
-
+extension AddPOIViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+       
+        
+        return fasle
+        
+    }
+    
+}
